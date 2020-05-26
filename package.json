@@ -7,6 +7,7 @@
     "start": "ng serve --open",
     "build": "ng-packagr -p package.json",
     "test": "ng test",
+    "test:watch": "ng test --watch",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
