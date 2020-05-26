@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Log} from './log.model';
 
 @Component({
   selector: 'app-ng-log-viewer',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgLogViewerComponent implements OnInit {
 
-  constructor() { }
+  @Input() logs: Log<any>[];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
