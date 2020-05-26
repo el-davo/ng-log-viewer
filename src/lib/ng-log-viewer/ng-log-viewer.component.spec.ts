@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgLogViewerComponent } from './ng-log-viewer.component';
+import {NgLogViewerComponent} from './ng-log-viewer.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {By} from '@angular/platform-browser';
 
 describe('NgLogViewerComponent', () => {
   let component: NgLogViewerComponent;
@@ -8,9 +10,9 @@ describe('NgLogViewerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgLogViewerComponent ]
-    })
-    .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [NgLogViewerComponent]
+    });
   }));
 
   beforeEach(() => {
@@ -19,7 +21,7 @@ describe('NgLogViewerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have a virtual scroll', () => {
+    expect(fixture.debugElement.query(By.css('app-virtual-scroll'))).not.toBeNull();
   });
 });
