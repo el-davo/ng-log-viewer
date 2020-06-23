@@ -3,6 +3,10 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {NgLogViewerModule} from '../public_api';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from './app.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {AppEffects} from './app.effects';
 
 @NgModule({
   declarations: [
@@ -10,7 +14,9 @@ import {NgLogViewerModule} from '../public_api';
   ],
   imports: [
     BrowserModule,
-    NgLogViewerModule
+    NgLogViewerModule,
+    StoreModule.forRoot({app: reducer}),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

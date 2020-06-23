@@ -1,1 +1,2 @@
-<app-virtual-scroll [logs]="logs"></app-virtual-scroll>
+<app-virtual-scroll [data]="logs" [length]="length" [totalPages]="totalPages"
+                    (nextPage)="onNextPage($event)"></app-virtual-scroll>

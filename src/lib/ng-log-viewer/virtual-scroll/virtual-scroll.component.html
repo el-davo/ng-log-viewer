@@ -1,1 +1,3 @@
-<app-log-item *ngFor="let log of logs" [log]="log"></app-log-item>
+<cdk-virtual-scroll-viewport itemSize="50" class="scroll-container">
+  <app-log-item *cdkVirtualFor="let log of ds" class="example-item" [log]="log"></app-log-item>
+</cdk-virtual-scroll-viewport>
